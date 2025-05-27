@@ -31,6 +31,8 @@ int main() {
     float area1, area2;
     float pib1, pib2;
     int ponto1, ponto2;
+    float densidade1, densidade2
+    float pibp1, pibp2
 
     printf("Carta 01! Complete o que se pede :-)\n");
     printf("Digite o estado (apenas a letra inicial):\n");
@@ -76,10 +78,17 @@ int main() {
     printf("Digite a quantidade de pontos turísticos:\n");
     scanf("%d", &ponto2);
 
-    printf("\nA carta 01 é: %c, %s, %s, %d, %.2f, %.2f, %d\n",
-           estado1, codigo1, cidade1, populacao1, area1, pib1, ponto1);
+    densidade1 = populacao1/area1
+    densidade2 = populacao2/area2
+
+    pibp1 = pib1/populacao1
+    pibp2 = pib2/populacao2
+
+    printf("\nA carta 01 é: %c, %s, %s, %d, %.2f, %.2f, %d, %f, %f \n",
+           estado1 \n, codigo1\n , cidade1\n , populacao1 " milhões de habitantes\n", area1 " km²\n", pib1" milhões de reais\n", ponto1 " pontos turísticos\n", "Densidade populacional de: ", densidade1\n, "PIB percapita de: ", pibp1 " reais");
     printf("A carta 02 é: %c, %s, %s, %d, %.2f, %.2f, %d\n",
            estado2, codigo2, cidade2, populacao2, area2, pib2, ponto2);
+    
 
     return 0;
 }
