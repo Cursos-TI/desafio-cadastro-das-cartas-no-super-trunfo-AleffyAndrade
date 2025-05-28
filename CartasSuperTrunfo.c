@@ -9,7 +9,7 @@ int main() {
     float area1, area2;
     float pib1, pib2;
     int ponto1, ponto2;
-    int escolhaJogador
+    int escolhaJogador;
     float densidade1, densidade2;
     float pibp1, pibp2;
     double super1, super2;  
@@ -23,7 +23,7 @@ int main() {
     scanf("%s", codigo1);
 
     printf("Digite o nome completo da cidade:\n");
-    scanf("%s", cidade1);
+    scanf(" %[^\n]", cidade1); // aceita espaços
 
     printf("Digite a população (em milhões):\n");
     scanf("%f", &populacao1);
@@ -45,7 +45,7 @@ int main() {
     scanf("%s", codigo2);
 
     printf("Digite o nome completo da cidade:\n");
-    scanf("%s", cidade2);
+    scanf(" %[^\n]", cidade2); // aceita espaços
 
     printf("Digite a população (em milhões):\n");
     scanf("%f", &populacao2);
@@ -59,6 +59,7 @@ int main() {
     printf("Digite a quantidade de pontos turísticos:\n");
     scanf("%d", &ponto2);
 
+    // Cálculos
     densidade1 = populacao1 / area1;
     densidade2 = populacao2 / area2;
 
@@ -68,6 +69,7 @@ int main() {
     super1 = populacao1 + ponto1 + pib1 + pibp1 + area1 + 1.0 / densidade1;
     super2 = populacao2 + ponto2 + pib2 + pibp2 + area2 + 1.0 / densidade2;
 
+    // Exibição das cartas
     printf("\nA carta 01 é:\n");
     printf("Estado: %c\n", estado1);
     printf("Código: %s\n", codigo1);
@@ -108,41 +110,48 @@ int main() {
     printf("PIB per Capita: Carta %d venceu (%d)\n", resPIBPerCapita ? 1 : 2, resPIBPerCapita);
     printf("Super Poder: Carta %d venceu (%d)\n", resSuperPoder ? 1 : 2, resSuperPoder);
 
-    // TEMA 2 - SWITCH
-
-    printf("### Jogo de comparar e com menu interativo ###\n");
-    printf("Escolha uma opção (digite o número indicado) =)\n");
-    printf("1. Comparar população"\n);
-    printf("2. Comparar área"\n);
+    // Menu interativo
+    printf("\n### Jogo de comparar e com menu interativo ###\n");
+    printf("Escolha uma opção (digite o número indicado):\n");
+    printf("1. Comparar população\n");
+    printf("2. Comparar área\n");
+    printf("3. Comparar PIB\n");
     printf("Escolha: ");
     scanf("%d", &escolhaJogador);
 
-    switch (escolhaJogador)
-    {
+    switch (escolhaJogador) {
         case 1:
-        printf("Vamos comparar as populações!\n");
-        break;
-
+            printf("Vamos comparar as populações!\n");
+            if (populacao1 > populacao2)
+                printf("Carta A ganhou na população!\n");
+            else if (populacao2 > populacao1)
+                printf("Carta B ganhou na população!\n");
+            else
+                printf("Empate na população!\n");
+            break;
         case 2:
-        printf("Vamos comparar as áreas!\n");
-
+            printf("Vamos comparar as áreas!\n");
+            if (area1 > area2)
+                printf("Carta A ganhou na área!\n");
+            else if (area2 > area1)
+                printf("Carta B ganhou na área!\n");
+            else
+                printf("Empate na área!\n");
+            break;
         case 3:
-        printf("Vamos comparar o PIB!\n");
-
+            printf("Vamos comparar o PIB!\n");
+            if (pib1 > pib2)
+                printf("Carta A ganhou no PIB!\n");
+            else if (pib2 > pib1)
+                printf("Carta B ganhou no PIB!\n");
+            else
+                printf("Empate no PIB!\n");
+            break;
+        default:
+            printf("Opção inválida!\n");
+            break;
     }
-
-    if (populacao1 == populacao2 || (area1 == area2) || (pib1==pib2)
-    {
-        printf("Empate!\n")
-
-    } else if (populacao1 > populacao2) || (area1 > area2) || (pib1 > pib2)
-        printf("Carta A ganhou!\n")
-        {
-            else 
-            printf("Carta B ganhou!\n");
-        }
-
-
 
     return 0;
 }
+
