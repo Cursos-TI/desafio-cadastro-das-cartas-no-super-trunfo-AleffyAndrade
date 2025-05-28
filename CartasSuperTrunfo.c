@@ -9,6 +9,7 @@ int main() {
     float area1, area2;
     float pib1, pib2;
     int ponto1, ponto2;
+    int escolhaJogador
     float densidade1, densidade2;
     float pibp1, pibp2;
     double super1, super2;  
@@ -106,6 +107,42 @@ int main() {
     printf("Densidade Populacional: Carta %d venceu (%d)\n", resDensidadePop ? 1 : 2, resDensidadePop);
     printf("PIB per Capita: Carta %d venceu (%d)\n", resPIBPerCapita ? 1 : 2, resPIBPerCapita);
     printf("Super Poder: Carta %d venceu (%d)\n", resSuperPoder ? 1 : 2, resSuperPoder);
+
+    // TEMA 2 - SWITCH
+
+    printf("### Jogo de comparar e com menu interativo ###\n");
+    printf("Escolha uma opção (digite o número indicado) =)\n");
+    printf("1. Comparar população"\n);
+    printf("2. Comparar área"\n);
+    printf("Escolha: ");
+    scanf("%d", &escolhaJogador);
+
+    switch (escolhaJogador)
+    {
+        case 1:
+        printf("Vamos comparar as populações!")
+        break;
+
+        case 2:
+        printf("Vamos comparar as áreas!")
+
+        case 3:
+        printf("Vamos comparar o PIB!")
+
+    }
+
+    if (populacao1 == populacao2 || (area1 == area2) || (pib1==pib2)
+    {
+        printf("Empate!\n")
+
+    } else if (populacao1 > populacao2) && (area1 > area2) && (pib1 > pib2)
+        printf("Carta A ganhou!\n")
+        {
+            else 
+            printf("Carta B ganhou!\n");
+        }
+
+
 
     return 0;
 }
