@@ -120,14 +120,14 @@ int main() {
     switch (escolhaJogador)
     {
         case 1:
-        printf("Vamos comparar as populações!")
+        printf("Vamos comparar as populações!\n");
         break;
 
         case 2:
-        printf("Vamos comparar as áreas!")
+        printf("Vamos comparar as áreas!\n");
 
         case 3:
-        printf("Vamos comparar o PIB!")
+        printf("Vamos comparar o PIB!\n");
 
     }
 
@@ -135,7 +135,7 @@ int main() {
     {
         printf("Empate!\n")
 
-    } else if (populacao1 > populacao2) && (area1 > area2) && (pib1 > pib2)
+    } else if (populacao1 > populacao2) || (area1 > area2) || (pib1 > pib2)
         printf("Carta A ganhou!\n")
         {
             else 
